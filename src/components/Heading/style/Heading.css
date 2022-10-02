@@ -63,4 +63,32 @@ textarea {
 /* Medium Screens */
 /* Big Screens */
 /* End Screen Responsive */
-/*# sourceMappingURL=index.css.map */
+.heading-intro {
+  margin-bottom: 10rem;
+}
+
+.heading-intro h1 {
+  font-size: 50px;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.heading-intro p {
+  color: #999;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+/* Start Screen Responsive */
+/* Small Screens */
+@media (max-width: 768px) {
+  .heading-intro {
+    text-align: center;
+  }
+}
+
+/* Medium Screens */
+/* Big Screens */
+/* End Screen Responsive */
+/*# sourceMappingURL=Heading.css.map */

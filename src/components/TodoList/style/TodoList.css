@@ -1,0 +1,124 @@
+.container {
+  padding: 0 80px;
+  margin: 0 auto;
+}
+
+* {
+  padding: 0%;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  font-family: "Gilroy", sans-serif;
+  background-color: #1f2b3c;
+  color: #fff;
+}
+
+input,
+textarea {
+  outline: none;
+}
+
+.App {
+  padding: 50px 0;
+}
+
+/* Start Screen Responsive */
+/* Small Screens */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium Screens */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Big Screens */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* Small Screens */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px !important;
+  }
+}
+
+/* Medium Screens */
+/* Big Screens */
+/* End Screen Responsive */
+.todo-list .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px;
+  background: #121a26;
+  border: solid #1b2e3e;
+  border-radius: 1.5rem;
+  margin: 10px 0;
+}
+
+.todo-list .card button {
+  border: none;
+  background: transparent;
+  color: #999;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.todo-list .card button:hover {
+  color: #fff;
+}
+
+.todo-list .card .left-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.todo-list .card .left-side .choose {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: #1e1d23;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.todo-list .card .left-side h3 {
+  font-weight: 300;
+}
+
+.todo-list .itsClicked .left-side .choose {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ff0077), to(blue));
+  background-image: linear-gradient(to bottom, #ff0077, blue);
+}
+
+.todo-list .itsClicked .left-side h3 {
+  text-decoration: line-through;
+}
+/*# sourceMappingURL=TodoList.css.map */

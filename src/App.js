@@ -1,25 +1,75 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import Heading from "./components/Heading/Heading";
+import TodoList from "./components/TodoList/TodoList";
+import axios from "axios";
+import AddingElements from "./components/AddingElementsForm/AddingElements";
 
-function App() {
+const App = () => {
+  // ======================================================================
+  const [ComingData, setComingData] = useState([]);
+  const [GettingFrontendText, setGettingFrontendText] = useState("");
+  const [State, setState] = useState(false);
+
+  // ======================================================================
+  // ======================================================================
+  const onGetting = () => {
+    axios
+      .get("http://localhost:3001/todo/read")
+      .then((response) => setComingData(response.data));
+  };
+  useEffect(() => {
+    onGetting();
+  }, []);
+  // ======================================================================
+  // ======================================================================
+
+  const SendData = () => {
+    axios
+      .post("http://localhost:3001/todo/posting", {
+        text: GettingFrontendText,
+      })
+      .then(() => {
+        setState(false);
+        onGetting();
+      });
+  };
+
+  // ======================================================================
+  // ======================================================================
+  const onUpdate = (paraID, paraComplete) => {
+    axios
+      .post("http://localhost:3001/todo/update", {
+        id: paraID,
+        complete: paraComplete,
+      })
+      .then(() => onGetting());
+  };
+  // ======================================================================
+  // ======================================================================
+  const onRemove = (paraID) => {
+    axios
+      .post("http://localhost:3001/todo/remove", {
+        id: paraID,
+      })
+      .then(() => onGetting());
+  };
+  // ======================================================================
+  // ======================================================================
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <Heading />
+        <TodoList onRemove={onRemove} onUpdate={onUpdate} Data={ComingData} />
+      </div>
+      <AddingElements
+        SendData={SendData}
+        setGettingFrontendText={setGettingFrontendText}
+        State={State}
+        setState={setState}
+      />
     </div>
   );
-}
+};
 
 export default App;

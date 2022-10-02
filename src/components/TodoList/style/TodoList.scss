@@ -1,0 +1,50 @@
+@import "../../../index";
+
+.todo-list {
+  .card {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #121a26;
+    border: solid #1b2e3e;
+    border-radius: 1.5rem;
+    margin: 10px 0;
+    button {
+      border: none;
+      background: transparent;
+      color: $--mainLightGray;
+      font-size: 15px;
+      cursor: pointer;
+      padding: 5px;
+      &:hover {
+        color: $--mainWhite;
+      }
+    }
+    .left-side {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      .choose {
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-color: $--mainHeading;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      h3 {
+        font-weight: 300;
+      }
+    }
+  }
+  .itsClicked {
+    .left-side {
+      .choose {
+        background-image: linear-gradient(to bottom, rgb(255, 0, 119), blue);
+      }
+      h3 {
+        text-decoration: line-through;
+      }
+    }
+  }
+}

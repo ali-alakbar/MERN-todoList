@@ -1,8 +1,19 @@
+// ================================================================================
+$--mainWhite: #fff;
+$--mainBlack: #000;
+$--mainBorder: #e5e5e5;
+$--mainLightGray: #999;
+$--mainHeading: #1e1d23;
+$--mainBackground: #1f2b3c;
+$--mainTransition: all 0.3s ease-in-out;
+// ================================================================================
+
 .container {
   padding: 0 80px;
   margin: 0 auto;
 }
 
+// ======== Start Global Rules ==========
 * {
   padding: 0%;
   margin: 0;
@@ -12,14 +23,13 @@
   -moz-box-sizing: border-box;
   list-style: none;
   text-decoration: none;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  transition: $--mainTransition;
 }
 
 body {
   font-family: "Gilroy", sans-serif;
-  background-color: #1f2b3c;
-  color: #fff;
+  background-color: $--mainBackground;
+  color: $--mainWhite;
 }
 
 input,
@@ -32,6 +42,7 @@ textarea {
 }
 
 /* Start Screen Responsive */
+
 /* Small Screens */
 @media (min-width: 768px) {
   .container {
@@ -53,6 +64,7 @@ textarea {
   }
 }
 
+// ===== Max ======
 /* Small Screens */
 @media (max-width: 768px) {
   .container {
@@ -61,6 +73,11 @@ textarea {
 }
 
 /* Medium Screens */
+@media (max-width: 992px) {
+}
+
 /* Big Screens */
+@media (max-width: 1200px) {
+}
+
 /* End Screen Responsive */
-/*# sourceMappingURL=index.css.map */
