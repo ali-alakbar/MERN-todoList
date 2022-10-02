@@ -14,7 +14,7 @@ const App = () => {
   // ======================================================================
   const onGetting = () => {
     axios
-      .get("http://localhost:3001/todo/read")
+      .get("https://calm-brook-00888.herokuapp.com/todo/read")
       .then((response) => setComingData(response.data));
   };
   useEffect(() => {
@@ -25,7 +25,7 @@ const App = () => {
 
   const SendData = () => {
     axios
-      .post("http://localhost:3001/todo/posting", {
+      .post("https://calm-brook-00888.herokuapp.com/todo/posting", {
         text: GettingFrontendText,
       })
       .then(() => {
@@ -38,7 +38,7 @@ const App = () => {
   // ======================================================================
   const onUpdate = (paraID, paraComplete) => {
     axios
-      .post("http://localhost:3001/todo/update", {
+      .post("https://calm-brook-00888.herokuapp.com/todo/update", {
         id: paraID,
         complete: paraComplete,
       })
@@ -48,7 +48,7 @@ const App = () => {
   // ======================================================================
   const onRemove = (paraID) => {
     axios
-      .post("http://localhost:3001/todo/remove", {
+      .post("https://calm-brook-00888.herokuapp.com/todo/remove", {
         id: paraID,
       })
       .then(() => onGetting());
