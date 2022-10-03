@@ -5,7 +5,9 @@ const TodoList = (props) => {
   const { Data } = props;
   return (
     <div className="todo-list">
-      {/* ============================== */}
+      {/* ============================================================================== */}
+      {/* If length of the variable "Data" is 0, display No task, other wise map through the Data. */}
+      {/* ============================================================================== */}
       {Data.length === 0 && (
         <h1
           style={{

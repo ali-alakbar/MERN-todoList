@@ -6,6 +6,9 @@ const AddingElements = (props) => {
       <button onClick={() => props.setState(!props.State)} className="icon">
         +
       </button>
+      {/* ============================================================================== */}
+      {/* Start The interface that will pop up, including the input field */}
+      {/* ============================================================================== */}
       <div
         style={{
           opacity: props.State ? 1 : 0,
@@ -13,7 +16,12 @@ const AddingElements = (props) => {
         }}
         className="input-container"
       >
+        {/* ============================================================================== */}
+        {/* Start the input field and the button "done" */}
+        {/* ============================================================================== */}
+
         <div className="form-content-wrapper">
+          {/* ======= The input field ======= */}
           <input
             onChange={(e) => {
               props.setGettingFrontendText(e.target.value);
@@ -23,6 +31,10 @@ const AddingElements = (props) => {
             type="text"
             placeholder="Enter something..."
           />
+          {/* ======== The Button ========= */}
+          {/* 
+            Don't send anything if the above input field is empty or contain spaces.
+          */}
           <button
             onClick={() => {
               const mainInputField = document.querySelector("#main-input");
@@ -37,10 +49,17 @@ const AddingElements = (props) => {
             Done
           </button>
         </div>
+        {/* ============================================================================== */}
+        {/* End the input field and the button "done" */}
+        {/* ============================================================================== */}
+
         <button onClick={() => props.setState(false)} className="closeBtn">
           X
         </button>
       </div>
+      {/* ============================================================================== */}
+      {/* End The interface that will pop up, including the input field */}
+      {/* ============================================================================== */}
     </div>
   );
 };
